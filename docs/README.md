@@ -13,7 +13,7 @@ Once I completed scanning my collection, I decided to export it so I could do so
 <img src="https://user-images.githubusercontent.com/20601593/178140474-558b1fe3-ac29-444a-83a5-f2e089df35c3.png" width="350" height="800">
 <em> Yes, I need to charge my phone. </em>
 <br/><br/>
-So yes, even after I had already paid for the scanning capabilities, I was being asked for more money to export my cards in various ways. However, there was a free option, so I figured I'd check it out.
+And yes, even after I had already paid for the scanning capabilities, I was being asked for more money to export my cards in various ways. However, there was a free option, so I figured I'd check it out.
 
 The free export included:
 - Card Name
