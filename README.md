@@ -4,6 +4,9 @@
 ### About
 The Helvault app has the ability to freely export a CSV of your "binders" / card collection. However, without paying for an upgrade, the default export only shows the foil status, name, and scryfall ID of the card. Thankfully, with the help of Scryfall's API and some poweshell, we can convert this to something far more useful.
 
+For more info on how I got here, check out my blog post on this repo:
+https://suspence00.github.io/HelvaultCSV-Converter/
+
 ### How-to
 1. Export the CSV of your binder/list/collection from Helvault and place the exported CSV on your PC.
 2. Download ```helvault-convert.ps1```  to your PC
