@@ -11,6 +11,7 @@ I continued to scan until I was met with a paywall - for $3.99 I could immediate
 Once I completed scanning my collection, I decided to export it so I could do some further research on my lists. However, even though I had just paid for the premium scanning capabilities, I was greeted with:
 
 <img src="https://user-images.githubusercontent.com/20601593/178140474-558b1fe3-ac29-444a-83a5-f2e089df35c3.png" width="350" height="800">
+*Yes, I know I need to charge my phone.*
 
 So yes, even after I had already paid for the scanning capabilities, I was being asked for more money to export my cards in various ways. However, there was a free option, so I figured I'd check it out.
 
