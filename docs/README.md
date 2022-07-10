@@ -44,7 +44,7 @@ A-ha! It turns out, when you store an ```Invoke-WebRequst``` powershell automati
 $helvaultcsv = Import-CSV "%userprofile%\desktop\helvault.csv"
 
 foreach ($card in $helvaultcsv){
-$data = Invoke-RestMethod -Method Get -Uri "https://api.scryfall.com/cards/$($card.scryfallid)" | Export-Csv -LiteralPath "%userprofile%\desktop\export.csv" -NoTypeInformation -Append -Force
+Invoke-RestMethod -Method Get -Uri "https://api.scryfall.com/cards/$($card.scryfallid)" | Export-Csv -LiteralPath "%userprofile%\desktop\export.csv" -NoTypeInformation -Append -Force
 Start-Sleep -Milliseconds 100
 }
 ```
