@@ -9,7 +9,7 @@ The Helvault app has the ability to freely export a CSV of your "binders" / card
 2. Download ```helvault-convert.ps1```  to your PC
 3. Edit ```helvault-convert.ps1```  with your text editor of choice. You will need to change the path of ```$helvaultcsv``` to the path of your exported file from step 1.
 4. Open powershell and navigate to the directory where ```helvault-convert.ps1``` is stored.
-5. type ``` .\helvault-convert.ps1``` into the console to run the script.
+5. Type ``` .\helvault-convert.ps1``` into the console to run the script.
 6. By default, it will export the detailed CSV to your desktop. If you changed the directory of ```$scryfallExportPath``` then the CSV will be there instead.
 
 ### Notes
