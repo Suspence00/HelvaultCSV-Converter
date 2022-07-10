@@ -23,7 +23,7 @@ and that's it. Not very useful at all, especially I have a collection of borderl
 
 ## Part 3. Let the Headbashing Begin
 
-If you already looked at the code, you will probably wonder how I ran into headbashing from a simple Invoke-WebRequest. This is because Poweshell does thins the way Powershell likes to do things.
+If you already looked at the code, you will probably wonder how I ran into headbashing from a simple Invoke-WebRequest. This is because Poweshell does things the way Powershell likes to do things.
 
 My original command was:
 
@@ -31,7 +31,7 @@ My original command was:
 Invoke-RestMethod -Method Get -Uri "https://api.scryfall.com/cards/$($card.scryfallid)"  | ConvertFrom-Json | ConvertTo-Csv | Out-File "C:\Users\Spencer\Downloads\better.csv" -Append
 ```
 
-I naively assumed that running an ```Invoke-WebRequest``` which should receive a JSON response in powershell would stay a JSON. So my plan was to convert the JSON then convert to CSV and then export via Out-file. But this continued to give me a jumbled mess of a CSV so I started digging a bit more.
+I naively assumed that running an ```Invoke-WebRequest``` which should receive a JSON response in powershell would stay a JSON. So my plan was to convert the JSON then convert to CSV and then export via ```Out-File```. But this continued to give me a jumbled mess of a CSV so I started digging a bit more.
 
 Storing the ```Invoke-WebRequest``` output as $json and then checking it's file type, the answer became clear:
 
@@ -41,10 +41,10 @@ A-ha! It turns out, when you store an ```Invoke-WebRequst``` powershell automati
 
 ```powershell
 
-$helvaultcsv = Import-CSV "C:\Example"
+$helvaultcsv = Import-CSV "%userprofile%\desktop\helvault.csv"
 
 foreach ($card in $helvaultcsv){
-$data = Invoke-RestMethod -Method Get -Uri "https://api.scryfall.com/cards/$($card.scryfallid)" | Export-Csv -LiteralPath "C:\Users\Spencer\Downloads\better.csv" -NoTypeInformation -Append -Force
+$data = Invoke-RestMethod -Method Get -Uri "https://api.scryfall.com/cards/$($card.scryfallid)" | Export-Csv -LiteralPath "%userprofile%\desktop\export.csv" -NoTypeInformation -Append -Force
 Start-Sleep -Milliseconds 100
 }
 ```
@@ -53,5 +53,5 @@ Scryfall asks in their API to provide 50-100ms of latency between requests, henc
 
 ## Part 4. To be continued
 
-I will probably spend a bit more time on this to get it so I can convert the Helvault CSV to something Deckbox.org friendly, as that is my main end goal from this. Otherwise, just a fun example of how 20 minutes of scripting can save you $8 with only a smidge of brain damage caused in the process. 
+I will probably spend a bit more time on this to get it so I can convert the Helvault CSV to something Deckbox.org friendly, as that is my main end goal from this. In the meanwhile, I commented out the script and it's on the main repo page if anyone ever finds themself in the need of this. Otherwise, just a fun example of how 20 minutes of scripting can save you $6 with only a smidge of brain damage caused in the process. 
 
