@@ -1,37 +1,16 @@
-## Welcome to GitHub Pages
+# Helvault Free CSV Converter
+## A quick script to turn Helvault free-tier CSV's to something more detailed via Scryfall API. 
 
-You can use the [editor on GitHub](https://github.com/Suspence00/HelvaultCSV-Converter/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+### About
+The Helvault app has the ability to freely export a CSV of your "binders" / card collection. However, without paying for an upgrade, the default export only shows the foil status, name, and scryfall ID of the card. Thankfully, with the help of Scryfall's API and some poweshell, we can convert this to something far more useful.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### How-to
+1. Export the CSV of your binder/list/collection from Helvault and place the exported CSV on your PC.
+2. Download ```helvault-convert.ps1```  to your PC
+3. Edit ```helvault-convert.ps1```  with your text editor of choice. You will need to change the path of $helvaultcsv to the path of your exported file from step 1.
+4. Open powershell and navigate to the directory where ```helvault-convert.ps1``` is stored.
+5. type ``` .\helvault-convert.ps1``` into the console to run the script.
+6. By default, it will export the detailed CSV to your desktop. If you changed the directory of ```$scryfallExportPath``` then the CSV will be there instead.
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Suspence00/HelvaultCSV-Converter/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+### Notes
+I'd like to flesh this out a bit so I can easily convert the Helvault exports to Deckbox and the like. For now, this will do. 
