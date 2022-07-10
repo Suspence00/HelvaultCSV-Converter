@@ -24,21 +24,21 @@ and that's it. Not very useful at all, especially I have a collection of borderl
 
 ## Part 3. Let the Headbashing Begin
 
-If you already looked at the code, you will probably wonder how I ran into headbashing from a simple Invoke-WebRequest. This is because Poweshell does things the way Powershell likes to do things.
+If you already looked at the code, you will probably wonder how I ran into headbashing from a simple `Invoke-WebRequest`. This is because Poweshell does things the way Powershell likes to do things.
 
 My original command was:
 
 ```powershell
 Invoke-RestMethod -Method Get -Uri "https://api.scryfall.com/cards/$($card.scryfallid)"  | ConvertFrom-Json | ConvertTo-Csv | Out-File "%userprofile%\desktop\export.csv" -Append
-```
+````
 
-I naively assumed that running an ```Invoke-WebRequest``` which should receive a JSON response in powershell would stay a JSON. So my plan was to convert the JSON then convert to CSV and then export via ```Out-File```. But this continued to give me a jumbled mess of a CSV so I started digging a bit more.
+I naively assumed that running an `Invoke-WebRequest` which should receive a JSON response in powershell would stay a JSON. So my plan was to convert the JSON then convert to CSV and then export via `Out-File`. But this continued to give me a jumbled mess of a CSV so I started digging a bit more.
 
 Storing the ```Invoke-WebRequest``` output as ```$json``` and then checking it's type, the answer became clear:
 
 ![image](https://user-images.githubusercontent.com/20601593/178140734-fa5ee745-e269-442d-93b6-3810490533ba.png)
 
-A-ha! It turns out, when you store an ```Invoke-WebRequst``` powershell automatically turns that into a PSCustomObject. While not what I expected, this actually makes things way easier. With the foreach to go through the loop you get:
+A-ha! It turns out, when you store an ```Invoke-WebRequst``` powershell automatically turns that into a `PSCustomObject`. While not what I expected, this actually makes things way easier. With the foreach to go through the loop you get:
 
 ```powershell
 
