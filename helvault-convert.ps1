@@ -9,7 +9,7 @@ $helvaultcsv = Import-csv "%userprofile%\Desktop\helvault.csv"
 $scryfallExportPath = "%userprofile%\Desktop\scryfall.csv"
 
 foreach ($card in $helvaultcsv){
-$data = Invoke-RestMethod -Method Get -Uri "https://api.scryfall.com/cards/$($card.scryfallid)" | Export-Csv -LiteralPath $scyfallExportPath -NoTypeInformation -Append -Force
+Invoke-RestMethod -Method Get -Uri "https://api.scryfall.com/cards/$($card.scryfallid)" | Export-Csv -LiteralPath $scyfallExportPath -NoTypeInformation -Append -Force
 
 # Scryfall kindly asks for 100ms of delay between API requests, so this does so.
 Start-Sleep -Milliseconds 100
