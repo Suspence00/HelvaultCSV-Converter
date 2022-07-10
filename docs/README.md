@@ -28,7 +28,7 @@ If you already looked at the code, you will probably wonder how I ran into headb
 My original command was:
 
 ```powershell
-Invoke-RestMethod -Method Get -Uri "https://api.scryfall.com/cards/$($card.scryfallid)"  | ConvertFrom-Json | ConvertTo-Csv | Out-File "C:\Users\Spencer\Downloads\better.csv" -Append
+Invoke-RestMethod -Method Get -Uri "https://api.scryfall.com/cards/$($card.scryfallid)"  | ConvertFrom-Json | ConvertTo-Csv | Out-File "%userprofile%\desktop\export.csv" -Append
 ```
 
 I naively assumed that running an ```Invoke-WebRequest``` which should receive a JSON response in powershell would stay a JSON. So my plan was to convert the JSON then convert to CSV and then export via ```Out-File```. But this continued to give me a jumbled mess of a CSV so I started digging a bit more.
