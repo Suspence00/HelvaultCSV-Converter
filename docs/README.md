@@ -33,7 +33,7 @@ Invoke-RestMethod -Method Get -Uri "https://api.scryfall.com/cards/$($card.scryf
 
 I naively assumed that running an ```Invoke-WebRequest``` which should receive a JSON response in powershell would stay a JSON. So my plan was to convert the JSON then convert to CSV and then export via ```Out-File```. But this continued to give me a jumbled mess of a CSV so I started digging a bit more.
 
-Storing the ```Invoke-WebRequest``` output as $json and then checking it's file type, the answer became clear:
+Storing the ```Invoke-WebRequest``` output as ```$json``` and then checking it's type, the answer became clear:
 
 ![image](https://user-images.githubusercontent.com/20601593/178140734-fa5ee745-e269-442d-93b6-3810490533ba.png)
 
@@ -49,7 +49,7 @@ Start-Sleep -Milliseconds 100
 }
 ```
 
-Scryfall asks in their API to provide 50-100ms of latency between requests, hence the sleep. But after a little bashing, we now have a dataset far more fleshed out just by taking that Scryfall ID and hitting it with 5 lines of Powershell.
+Scryfall asks in their API to provide 50-100ms of latency between requests, hence the sleep. But after a little bashing, we now have a dataset far more fleshed out just by taking the Scryfall ID of the card(s) and 5 lines of Powershell.
 
 ## Part 4. To be continued
 
